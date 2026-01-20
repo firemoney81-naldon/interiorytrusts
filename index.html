@@ -1,23 +1,499 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+    <!-- JSON-LD (Schema Markup) for informational content -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "35평 아파트 인테리어 비용: 2026년 최신 예상 견적 가이드",
+      "description": "35평 아파트 전체 리모델링 비용에 대한 자세한 가이드. 2026년 기준 예상 비용을 분석하고, 비용을 절감하는 팁을 제공합니다.",
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "35평 인테리어 비용 계산하기",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "계획 수립",
+            "text": "인테리어 범위(전체 또는 부분)를 결정하고 예산을 설정합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "견적 비교",
+            "text": "최소 3개 이상의 인테리어 업체에서 방문 견적을 받습니다."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "시공 진행",
+            "text": "계약서를 꼼꼼히 확인하고 공사를 진행합니다."
+          }
+        ],
+        "supply": [
+          {
+            "@type": "HowToSupply",
+            "name": "견적서"
+          },
+          {
+            "@type": "HowToSupply",
+            "name": "디자인 포트폴리오"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.8; /* 줄 간격 넓혀 가독성 향상 */
+        background-color: #f7f9fc; /* 부드러운 배경색 */
+        color: #333;
+        font-weight: 300;
+      }
+      header {
+        background-color: #ffffff;
+        border-bottom: 2px solid #e0e6ec;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+      header h1 {
+        color: #1a3c5d; /* 메인 테마 색상 (진한 청색) */
+        font-size: 2.2rem;
+        margin: 0;
+        font-weight: 700;
+      }
+      header p {
+        color: #6a7c8c;
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        border-top: 1px dashed #e0e6ec;
+        padding-top: 1rem;
+      }
+      nav li {
+        text-align: center;
+      }
+      nav a {
+        color: #1a3c5d;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      nav a:hover {
+        background-color: #e0f0ff;
+        color: #004d99;
+      }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        background-color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border-radius: 12px;
+      }
+      section {
+        padding: 2rem 0;
+        border-bottom: 1px solid #eee;
+      }
+      h2 {
+        color: #1a3c5d;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 3px solid #e0f0ff;
+        padding-bottom: 0.5rem;
+        font-weight: 700;
+      }
+      h3 {
+        color: #3a6b8a;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+      h4 {
+        color: #5d8aa8;
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        font-weight: 600;
+      }
+      .content-box {
+        background-color: #fcfcfc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        margin-bottom: 2rem;
+      }
+      .cost-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+      }
+      .cost-table th, .cost-table td {
+        padding: 1rem;
+        border: 1px solid #e0e6ec;
+        text-align: center;
+      }
+      .cost-table th {
+        background-color: #3a6b8a;
+        color: white;
+        font-weight: 700;
+      }
+      .cost-table tr:nth-child(even) {
+        background-color: #f9fbfd;
+      }
+      dl dt {
+        font-weight: 700;
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        background-color: #f0f8ff;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #1a3c5d;
+        border-left: 5px solid #5d8aa8;
+      }
+      dl dd {
+        margin-left: 0;
+        padding: 1rem;
+        background-color: #fcfcfc;
+        border: 1px solid #e0e6ec;
+        border-top: none;
+        margin-bottom: 0.5rem;
+        display: none;
+      }
+      dl dt.active + dd {
+        display: block;
+      }
+      .cta-button {
+        display: block;
+        background-color: #ff8c42; /* Soft orange accent color */
+        color: white;
+        font-weight: 700;
+        padding: 1.2rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        margin: 2rem auto;
+        width: fit-content;
+        transition: background-color 0.3s ease;
+        text-align: center;
+      }
+      .cta-button:hover {
+        background-color: #e67c3b;
+      }
+      .highlight {
+        color: #d64937; /* 강조색 */
+        font-weight: 700;
+      }
+      .info-box {
+        background-color: #e0f0ff;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-left: 5px solid #3a6b8a;
+      }
+      .info-box p {
+        margin: 0;
+      }
+      .keyword-tags {
+        margin: 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .keyword-tags a {
+        background-color: #f0f8ff;
+        color: #3a6b8a;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        border: 1px solid #e0f0ff;
+      }
+      .keyword-tags a:hover {
+        background-color: #d0e8ff;
+      }
+      form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+      }
+      form input[type="text"], form input[type="email"], form select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      form textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        resize: vertical;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #777;
+        background-color: #f0f0f0;
+        margin-top: 2rem;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>35평 아파트 인테리어 비용: 2026년 최신 예상 견적 가이드</h1>
+        <p>평균 금액부터 지역별, 공사 범위별 상세 분석까지, 합리적인 인테리어 견적을 위한 완벽한 정보.</p>
+        <nav>
+            <ul>
+                <li><a href="#cost-overview">인테리어 견적 개요</a></li>
+                <li><a href="#cost-breakdown">상세 비용 분석</a></li>
+                <li><a href="#regional-comparison">지역별 비교</a></li>
+                <li><a href="#process-guide">시공 가이드 및 팁</a></li>
+                <li><a href="#faq">자주 묻는 질문</a></li>
+                <li><a href="#contact">견적 문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section id="cost-overview">
+            <h2>35평 인테리어 비용, 얼마가 적당할까?</h2>
+            <div class="info-box">
+                <p><strong>결론부터 말씀드리자면, 2026년 기준 35평 아파트 전체 인테리어 평균 비용은 <span class="highlight">3,000만원에서 6,000만원 사이</span>에 형성되어 있습니다.</strong> 단, 이는 공사 범위, 자재 등급, 지역별 인건비 등에 따라 크게 변동될 수 있습니다. 35평은 3~4인 가구가 가장 선호하는 면적으로, 주거 만족도를 높이기 위해 인테리어를 고려하는 분들이 많습니다.</p>
+            </div>
+            <p>인테리어는 단순히 집을 꾸미는 것을 넘어, 주거 환경을 개선하고 자산 가치를 높이는 투자이기도 합니다. 하지만 <span class="highlight">"35평 리모델링 비용"</span>을 검색했을 때 나오는 금액의 폭이 워낙 커서 혼란을 겪는 분들이 많습니다. 본 가이드에서는 2026년 최신 인테리어 시장 동향을 반영하여 <span class="highlight">"35평 인테리어 비용"</span>의 상세한 내역을 분석하고, 합리적인 <span class="highlight">"인테리어 견적"</span>을 받는 방법을 알려드립니다.</p>
+
+            <h3>인테리어 비용을 결정하는 3대 요소</h3>
+            <ol>
+                <li><strong>공사 범위:</strong> 전체 리모델링(철거 포함)인지, 부분 수리(도배, 장판 등)인지에 따라 비용이 천차만별입니다.</li>
+                <li><strong>자재 등급:</strong> 주방 싱크대, 마루, 욕실 타일 등의 자재가 국산/수입, 일반/브랜드 제품인지에 따라 수백만원의 차이가 발생합니다.</li>
+                <li><strong>업체 선정:</strong> 전문 인테리어 업체(종합 시공)인지, 셀프/반셀프(부분 외주)인지에 따라 관리비용 및 인건비가 달라집니다.</li>
+            </ol>
+            <p>이 외에도 <span class="highlight">"35평 인테리어"</span> 시 <span class="highlight">확장 공사</span> 유무, <span class="highlight">샤시 교체</span> 여부 등 추가 공사가 필요한지에 따라 최종 <span class="highlight">"인테리어 금액"</span>이 결정됩니다.</p>
+        </section>
+
+        <section id="cost-breakdown">
+            <h2>35평 인테리어 비용 상세 분석 (항목별 견적)</h2>
+            <p>35평 아파트 <span class="highlight">전체 리모델링</span>을 가정했을 때, 각 공사 항목별로 어느 정도의 비용이 소요되는지 상세하게 살펴보겠습니다. 이 표는 일반적인 자재 등급을 기준으로 한 <span class="highlight">"35평 인테리어 평균 금액"</span>입니다. <span class="highlight">"인테리어 싼곳"</span>을 찾는 것도 중요하지만, 품질을 보장받기 위해서는 적정 가격대를 이해하는 것이 필수적입니다.</p>
+
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>공사 항목</th>
+                        <th>평균 예상 비용 (원)</th>
+                        <th>비용 결정 요소</th>
+                        <th>주의사항</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>철거 및 기본 공사</strong></td>
+                        <td>300만원 ~ 500만원</td>
+                        <td>기존 구조물(벽, 바닥) 철거 규모, 폐기물 처리비용</td>
+                        <td>안전 문제로 전문가 견적 필수</td>
+                    </tr>
+                    <tr>
+                        <td><strong>창호/샤시 교체</strong></td>
+                        <td>800만원 ~ 1,200만원</td>
+                        <td>단창/이중창 선택, 브랜드(LG, KCC 등), 프레임 등급</td>
+                        <td>단열 성능에 직결되는 핵심 항목</td>
+                    </tr>
+                    <tr>
+                        <td><strong>주방 (싱크대, 타일)</strong></td>
+                        <td>500만원 ~ 1,000만원</td>
+                        <td>상판 자재(인조대리석, 세라믹), 가전 배치, 수납장 구조</td>
+                        <td>브랜드 싱크대는 비용 상승 요인</td>
+                    </tr>
+                    <tr>
+                        <td><strong>욕실 (2개소)</strong></td>
+                        <td>600만원 ~ 1,000만원</td>
+                        <td>타일 종류, 수전/도기 브랜드, 방수 공사 범위</td>
+                        <td>방수 하자는 추후 큰 문제로 이어짐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>바닥재 (마루)</strong></td>
+                        <td>400만원 ~ 700만원</td>
+                        <td>강마루, 합판마루, 포세린타일 등 자재 종류, 시공 방식</td>
+                        <td>철거 후 폐기물 처리 비용 추가 발생 가능</td>
+                    </tr>
+                    <tr>
+                        <td><strong>도배 및 필름</strong></td>
+                        <td>250만원 ~ 400만원</td>
+                        <td>실크벽지, 합지벽지 선택, 몰딩/걸레받이 교체 여부</td>
+                        <td>전체 인테리어 시 합지벽지로도 충분히 고급스러운 연출 가능</td>
+                    </tr>
+                    <tr>
+                        <td><strong>조명 및 전기 공사</strong></td>
+                        <td>150만원 ~ 300만원</td>
+                        <td>매입등, 간접조명 추가 유무, 스위치/콘센트 증설</td>
+                        <td>스마트 홈 시스템 연동 시 비용 상승</td>
+                    </tr>
+                    <tr>
+                        <td><strong>기타 (중문, 현관, 베란다)</strong></td>
+                        <td>200만원 ~ 400만원</td>
+                        <td>중문 설치, 현관 타일 교체, 베란다 탄성코트 시공</td>
+                        <td>부분 공사 시 견적 조율 필수</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong><span class="highlight">총합: 3,200만원 ~ 5,500만원</span></strong> (간접비 및 부가세 제외)</p>
+            <p>위 표는 <span class="highlight">"35평 리모델링"</span> 시 각 공정별로 발생하는 <span class="highlight">평균 비용</span>을 보여줍니다. <span class="highlight">"35평 인테리어 내돈내산"</span> 후기를 보면 알 수 있듯이, 이 금액은 최소 금액이며, 고급 자재를 사용할 경우 <span class="highlight">"35평 인테리어 비용"</span>은 8,000만원 이상까지도 상승할 수 있습니다. <span class="highlight">"인테리어 견적 비교"</span> 시 반드시 각 항목별로 세부 내역을 확인해야 합니다.</p>
+
+            <h3><span class="highlight">35평 인테리어 견적</span> 항목별 장단점 비교</h3>
+            <div class="content-box">
+                <h4>1. 바닥재 (마루 vs. 타일)</h4>
+                <p><strong>강마루 (마루):</strong> 따뜻한 느낌을 주며 일반적인 아파트에 가장 많이 사용됩니다. 비교적 저렴하고 시공이 간편하지만 습기에 약하고 층간소음에는 한계가 있습니다.</p>
+                <p><strong>포세린 타일 (타일):</strong> 최근 고급 인테리어에 많이 적용됩니다. 내구성이 뛰어나고 청소가 용이하며, 세련된 느낌을 줍니다. 단점은 시공 비용이 비싸고, 겨울에 차갑게 느껴질 수 있다는 점입니다.</p>
+                <h4>2. 벽지 (실크 vs. 합지)</h4>
+                <p><strong>실크벽지:</strong> 표면이 PVC로 코팅되어 있어 내구성이 좋고 오염에 강합니다. 고급스러운 질감을 표현할 수 있지만, 합지에 비해 <span class="highlight">"35평 인테리어 비용"</span>이 1.5배 이상 비쌉니다.</p>
+                <p><strong>합지벽지:</strong> 종이 재질로 되어 있어 친환경적이며 비용이 저렴합니다. 습도 조절에 유리하나 내구성이 약하고 오염에 취약합니다.</p>
+            </div>
+        </section>
+
+        <section id="regional-comparison">
+            <h2>전국 지역별 35평 인테리어 비용 차이 분석</h2>
+            <p>인테리어 <span class="highlight">"견적 금액"</span>은 지역별 인건비와 자재 유통 구조에 따라 차이를 보입니다. 특히 <span class="highlight">"35평 아파트 인테리어"</span> 시 <span class="highlight">"저렴한곳"</span>과 <span class="highlight">"싼곳"</span>을 찾는 기준은 지역별 평균 가격대를 파악하는 것에서 시작됩니다.</p>
+            <p><strong>[서울/수도권]</strong></p>
+            <p><strong>서울</strong>을 비롯한 <span class="highlight">강남</span>, <span class="highlight">송파</span>, <span class="highlight">서초</span>, <span class="highlight">용산</span>, <span class="highlight">마포</span>, <span class="highlight">성남</span>, <span class="highlight">분당</span>, <span class="highlight">판교</span>, <span class="highlight">하남</span> 등 수도권 지역은 인건비와 물가가 높은 편입니다. 또한, 인테리어 수요가 많아 고급 자재나 유명 인테리어 <span class="highlight">"업체 추천"</span>이 집중되어 있어 전체 <span class="highlight">"35평 인테리어 비용"</span> 평균이 상대적으로 높게 형성됩니다. <span class="highlight">용인</span>, <span class="highlight">수원</span>, <span class="highlight">화성</span>, <span class="highlight">동탄</span>, <span class="highlight">일산</span>, <span class="highlight">고양</span>, <span class="highlight">파주</span>, <span class="highlight">김포</span> 등의 신도시 지역은 트렌디한 디자인을 선호하는 경향이 있어 자재비용이 높을 수 있습니다. <span class="highlight">안양</span>, <span class="highlight">부천</span>, <span class="highlight">시흥</span>, <span class="highlight">광명</span> 등은 서울 외곽에 위치하며 인테리어 업체 간 경쟁이 치열하여 비교적 합리적인 <span class="highlight">"35평 인테리어 견적"</span>을 받을 수 있습니다.</p>
+            <p><strong>[지방 광역시]</strong></p>
+            <p><strong>부산</strong>, <span class="highlight">울산</span>, <span class="highlight">대구</span>, <span class="highlight">광주</span>, <span class="highlight">대전</span> 등 광역시 지역은 수도권 대비 <span class="highlight">"35평 인테리어 비용"</span>이 5~10% 정도 저렴하게 시작됩니다. 특히 <span class="highlight">부산 해운대</span>나 <span class="highlight">대구 수성구</span>처럼 특정 지역의 고급 아파트는 서울과 비슷한 수준의 프리미엄 견적이 나오기도 합니다. <span class="highlight">"35평 리모델링"</span> 시 <span class="highlight">"업체 추천"</span>을 받아 <span class="highlight">"인테리어 후기"</span>가 좋은 곳을 선택하는 것이 중요합니다.</p>
+            <p><strong>[기타 지방]</strong></p>
+            <p><strong>천안</strong>, <span class="highlight">청주</span>, <span class="highlight">전주</span>, <span class="highlight">포항</span>, <span class="highlight">구미</span>, <span class="highlight">창원</span>, <span class="highlight">제주</span> 등 지역은 인건비와 물류비용의 영향이 있습니다. <span class="highlight">"35평 인테리어 비용"</span>이 상대적으로 낮게 책정되지만, 인테리어 업체 수가 적어 선택지가 제한적일 수 있습니다. <span class="highlight">"인테리어 견적 비교"</span>를 통해 믿을 수 있는 업체를 찾아야 합니다.</p>
+
+            <div class="keyword-tags" aria-label="연관 키워드">
+                <a href="#cost-overview">35평 인테리어 비용</a>
+                <a href="#cost-breakdown">35평 인테리어 견적</a>
+                <a href="#cost-breakdown">인테리어 평균 금액</a>
+                <a href="#cost-overview">35평 리모델링</a>
+                <a href="#process-guide">인테리어 시공 순서</a>
+                <a href="#regional-comparison">서울 인테리어 비용</a>
+                <a href="#regional-comparison">부산 35평 인테리어</a>
+                <a href="#cost-breakdown">샤시 교체 비용</a>
+                <a href="#cost-breakdown">주방 인테리어 비용</a>
+                <a href="#cost-breakdown">욕실 리모델링</a>
+                <a href="#cost-overview">인테리어 저렴한곳</a>
+                <a href="#faq">인테리어 장단점</a>
+            </div>
+        </section>
+
+        <section id="process-guide">
+            <h2>합리적인 <span class="highlight">"35평 인테리어"</span> 시공 가이드</h2>
+            <p>성공적인 인테리어는 철저한 계획에서 시작됩니다. <span class="highlight">"인테리어 후기"</span>를 찾아보면, 계획 없이 진행했다가 예산을 초과하거나 하자 문제로 고생하는 경우가 많습니다. <span class="highlight">"35평 아파트 인테리어"</span>를 위한 올바른 절차와 <span class="highlight">"인테리어 비용"</span> 절감 팁을 소개합니다.</p>
+
+            <h3>1. 인테리어 준비 단계: 계획 및 예산 설정</h3>
+            <p>가장 먼저 <span class="highlight">"35평 아파트 인테리어"</span>의 범위를 정해야 합니다. <span class="highlight">전체 리모델링</span>을 할 것인지, 아니면 <span class="highlight">부분 인테리어</span>를 할 것인지 결정해야 합니다. 예산은 최소 10%의 여유분을 포함하여 책정하는 것이 좋습니다. 자재 등급을 미리 정하고, <span class="highlight">"인테리어 업체 추천"</span>을 받아 여러 곳의 포트폴리오를 비교하는 것이 중요합니다.</p>
+
+            <h3>2. 견적 비교 및 업체 선정 (저렴한곳 찾는 노하우)</h3>
+            <p>최소 3개 이상의 업체에서 방문 견적을 받는 것이 좋습니다. <span class="highlight">"35평 인테리어 비용"</span>이 저렴한 곳을 찾으려고 무조건 최저가 업체를 선택하면 하자 발생 위험이 높습니다. 견적서를 비교할 때는 단순히 총액만 볼 것이 아니라, <span class="highlight">각 항목별 자재 등급</span>과 <span class="highlight">시공 범위</span>를 꼼꼼하게 확인해야 합니다. 견적 비교 시 <span class="highlight">"인테리어 후기"</span>와 <span class="highlight">"업체 순위"</span>를 참고하여 신뢰성 있는 업체를 선정하세요.</p>
+
+            <h3>3. 공사 진행 단계: 체크리스트</h3>
+            <p>인테리어 공사 기간은 보통 <span class="highlight">35평 기준 3주에서 4주</span>가 소요됩니다. 공사 중에도 주기적으로 현장을 방문하여 진행 상황을 체크하는 것이 중요합니다. 특히 <span class="highlight">샤시 교체</span>나 <span class="highlight">확장 공사</span>처럼 큰 공사는 공사 전후로 사진을 촬영하여 기록을 남기는 것이 하자를 예방하는 방법입니다. <span class="highlight">"인테리어 내돈내산"</span> 경험자들은 시공 중간 점검이 필수라고 강조합니다.</p>
+
+            <h3>4. 인테리어 비용 절감 팁</h3>
+            <ul>
+                <li><strong>비성수기 활용:</strong> 12월~2월, 7월~8월의 비성수기에 <span class="highlight">"인테리어 견적"</span>을 받으면 인건비 할인을 받을 수 있는 경우가 많습니다.</li>
+                <li><strong>자재 직접 구매:</strong> <span class="highlight">"반셀프 인테리어"</span>를 통해 타일, 조명, 수전 등을 직접 구매하여 <span class="highlight">"35평 인테리어 비용"</span>을 절감할 수 있습니다.</li>
+                <li><strong>부분 인테리어 선택:</strong> <span class="highlight">"35평 아파트 리모델링"</span> 시 꼭 필요한 부분(주방, 욕실, 샤시)만 선택하여 <span class="highlight">"인테리어 금액"</span>을 낮출 수 있습니다.</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>전문가 Tip: 2026년 인테리어 트렌드와 비용 전망</h4>
+                <p>2026년에는 <span class="highlight">친환경 자재</span> 및 <span class="highlight">스마트 홈 시스템</span> 연동 수요 증가로 인테리어 비용이 상승할 것으로 예상됩니다. 특히 <span class="highlight">미니멀리즘 디자인</span>과 <span class="highlight">맞춤형 수납 가구</span>에 대한 관심이 높아지고 있습니다. <span class="highlight">"35평 인테리어"</span> 계획 시 이러한 트렌드를 반영하여 장기적인 만족도를 높이는 것을 고려해 보세요.</p>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <dl>
+                <dt tabindex="0" aria-expanded="false">Q1. 35평 인테리어 기간은 얼마나 걸리나요?</dt>
+                <dd>전체 리모델링 기준으로 35평은 보통 3주에서 4주 정도 소요됩니다. 철거, 목공, 전기, 욕실, 주방, 도배 순서로 공사가 진행되며, <span class="highlight">샤시 교체</span>나 <span class="highlight">확장 공사</span>가 포함될 경우 1주일 정도 기간이 늘어날 수 있습니다.</dd>
+                <dt tabindex="0" aria-expanded="false">Q2. <span class="highlight">"35평 인테리어 비용"</span>을 줄이려면 어떻게 해야 하나요?</dt>
+                <dd>자재 등급을 합리적으로 선택하고, <span class="highlight">부분 인테리어</span>를 고려하며, 비성수기에 공사를 진행하는 것이 비용 절감에 도움이 됩니다. 또한, <span class="highlight">"반셀프 인테리어"</span>를 통해 직접 자재를 구매하고 일부 공정을 담당하면 <span class="highlight">"인테리어 금액"</span>을 크게 낮출 수 있습니다.</dd>
+                <dt tabindex="0" aria-expanded="false">Q3. 인테리어 시 <span class="highlight">하자</span> 발생 시 대처 방법은?</dt>
+                <dd>공사 계약 전 <span class="highlight">하자보수 기간(통상 1년)</span>을 명시한 계약서를 작성하고, A/S가 확실한 <span class="highlight">"인테리어 업체 추천"</span>을 받아야 합니다. <span class="highlight">"35평 인테리어 내돈내산"</span> 후기를 통해 업체의 신뢰도를 확인하는 것이 중요합니다.</dd>
+                <dt tabindex="0" aria-expanded="false">Q4. <span class="highlight">"35평 인테리어 비용"</span>의 지역별 차이는 왜 발생하나요?</dt>
+                <dd>주로 인건비와 자재 물류비용의 차이 때문입니다. 서울, 경기도 등 수도권은 인건비가 높고, <span class="highlight">부산</span>, <span class="highlight">대구</span>, <span class="highlight">광주</span> 등 지방 광역시는 상대적으로 인건비가 낮습니다. 하지만 <span class="highlight">고급 자재</span>를 사용할 경우 지역에 상관없이 비용이 상승합니다.</dd>
+            </dl>
+        </section>
+
+        <section id="contact">
+            <h2>인테리어 견적 문의 및 비용 상담</h2>
+            <p><strong>35평 인테리어</strong>, 이제 전문가와 상담하세요. 복잡한 <span class="highlight">"인테리어 비용"</span>과 <span class="highlight">"견적 비교"</span>를 한 번에 해결해 드립니다. <span class="highlight">"35평 아파트 인테리어"</span>는 초기 계획과 견적 단계가 가장 중요합니다. 아래 정보를 입력하시고 무료 견적 상담을 받아보세요.</p>
+            <form action="#contact" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">연락처:</label>
+                    <input type="text" id="phone" name="phone" placeholder="전화번호를 입력해주세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="region">거주 지역:</label>
+                    <select id="region" name="region" required>
+                        <option value="">지역 선택</option>
+                        <option value="서울">서울</option>
+                        <option value="경기">경기 (수원, 용인, 성남, 분당, 일산, 고양, 하남, 남양주 등)</option>
+                        <option value="인천">인천</option>
+                        <option value="부산">부산</option>
+                        <option value="대구">대구</option>
+                        <option value="대전">대전</option>
+                        <option value="광주">광주</option>
+                        <option value="울산">울산</option>
+                        <option value="세종">세종</option>
+                        <option value="기타">기타 지역 (천안, 청주, 전주, 창원 등)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="scope">인테리어 범위:</label>
+                    <select id="scope" name="scope" required>
+                        <option value="">공사 범위 선택</option>
+                        <option value="전체 리모델링">35평 전체 리모델링</option>
+                        <option value="부분 인테리어">부분 인테리어 (주방/욕실/바닥 등)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="details">상세 문의 사항:</label>
+                    <textarea id="details" name="details" rows="5" placeholder="궁금한 점이나 특별히 원하는 디자인이 있다면 자세히 작성해주세요. (예: 주방 확장, 샤시 교체 희망 등)"></textarea>
+                </div>
+                <button type="submit" class="cta-button">무료 견적 상담 신청</button>
+            </form>
+            <p class="small-info">개인정보는 견적 상담 외 다른 용도로 사용되지 않습니다.</p>
+        </section>
     </main>
-  </body>
-</html>
+
+    <script>
+      // FAQ 아코디언 기능 (접기/펼치기)
+      document.querySelectorAll('dl dt').forEach((dt) => {
+        dt.addEventListener('click', () => {
+          dt.classList.toggle('active');
+          let expanded = dt.getAttribute('aria-expanded') === 'true';
+          dt.setAttribute('aria-expanded', !expanded);
+        });
+        dt.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            dt.click();
+          }
+        });
+      });
+    </script>
+
+  
